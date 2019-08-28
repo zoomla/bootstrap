@@ -41,6 +41,10 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Run accessibility tests
+        run: npm run docs-accessibility
+        if: matrix.node == 12
+
       - name: Run bundlewatch
         run: npm run bundlewatch
         if: matrix.node == 10
