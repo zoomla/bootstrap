@@ -1,5 +1,10 @@
 {
   "standard": "WCAG2AA",
   "level": "error",
-  "concurrency": 4
+  "concurrency": 4,
+  "defaults": {
+    "ignore": [
+      "WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2"
+    ]
+  }
 }
