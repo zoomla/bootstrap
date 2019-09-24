@@ -41,6 +41,10 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Run linkinator prod
+        run: npm run docs-linkinator-prod
+        if: matrix.node == 12
+
       - name: Run bundlesize
         run: npm run bundlesize
         if: matrix.node == 10
