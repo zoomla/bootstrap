@@ -156,14 +156,7 @@ In Bootstrap 5, we've dropped the `color()`, `theme-color()` and `gray()` functi
 
 We also have a function for getting a particular _level_ of color. Negative level values will lighten the color, while higher levels will darken.
 
-{{< highlight scss >}}
-@function color-level($color: $primary, $level: 0) {
-  $color-base: if($level > 0, #000, #fff);
-  $level: abs($level);
-
-  @return mix($color-base, $color, $level * $theme-color-interval);
-}
-{{< /highlight >}}
+{{< scss-docs name="color-level" file="scss/_functions.scss" >}}
 
 In practice, you'd call the function and pass in two parameters: the name of the color from `$theme-colors` (e.g., primary or danger) and a numeric level.
 
@@ -175,14 +168,16 @@ In practice, you'd call the function and pass in two parameters: the name of the
 
 ## Color contrast
 
-An additional function we include in Bootstrap is the color contrast function, `color-yiq`. It utilizes the [YIQ color space](https://en.wikipedia.org/wiki/YIQ) to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
+In order to meet [WCAG 2.0 accessibility standards for color contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html), authors **must** provide [a contrast ratio of at least 4.5:1](https://www.w3.org/WAI/WCAG20/quickref/20160105/Overview.php#visual-audio-contrast-contrast), with very few exceptions.
+
+An additional function we include in Bootstrap is the color contrast function, `color-contrast`. It utilizes the [WCAG 2.0 algorithm](https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests) for calculating contrast thresholds based on [relative luminance](https://www.w3.org/WAI/GL/wiki/Relative_luminance) in a `sRGB` colorspace to automatically return a light (`#fff`) or dark (`#111`) contrast color based on the specified base color. This function is especially useful for mixins or loops where you're generating multiple classes.
 
 For example, to generate color swatches from our `$theme-colors` map:
 
 {{< highlight scss >}}
 @each $color, $value in $theme-colors {
   .swatch-#{$color} {
-    color: color-yiq($value);
+    color: color-contrast($value);
   }
 }
 {{< /highlight >}}
@@ -191,7 +186,7 @@ It can also be used for one-off contrast needs:
 
 {{< highlight scss >}}
 .custom-element {
-  color: color-yiq(#000); // returns `color: #fff`
+  color: color-contrast(#000); // returns `color: #fff`
 }
 {{< /highlight >}}
 
@@ -199,10 +194,10 @@ You can also specify a base color with our color map functions:
 
 {{< highlight scss >}}
 .custom-element {
-  color: color-yiq($dark); // returns `color: #fff`
+  color: color-contrast($dark); // returns `color: #fff`
 }
 {{< /highlight >}}
 
 # Escape SVG
 
-We use the `escape-svg` function to escape the `<`, `>` and `#` characters for SVG background images. These characters need to be escaped to properly render the background images in IE.
+We use the `escape-svg` function to escape the `<`, `>` and `#` characters for SVG background images.

@@ -1,10 +1,9 @@
 ---
-layout: docs
-title: Theming Bootstrap
-description: Customize Bootstrap 4 with our new built-in Sass variables for global style preferences for easy theming and component changes.
-group: getting-started
-toc: true
+layout: redirect
+sitemap_exclude: true
+redirect: "/docs/4.3/customize/overview/"
 ---
+<<<<<<< HEAD
 
 ## Introduction
 
@@ -430,3 +429,5 @@ a {
   color: var(--blue);
 }
 {{< /highlight >}}
+=======
+>>>>>>> drop old theming page, change to redirect
