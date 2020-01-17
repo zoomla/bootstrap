@@ -131,15 +131,15 @@ To show an element only on a given interval of screen sizes you can combine one 
 
 Change the `display` value of elements when printing with our print display utility classes. Includes support for the same `display` values as our responsive `.d-*` utilities.
 
-- `.d-print-none`
-- `.d-print-inline`
-- `.d-print-inline-block`
-- `.d-print-block`
-- `.d-print-table`
-- `.d-print-table-row`
-- `.d-print-table-cell`
-- `.d-print-flex`
-- `.d-print-inline-flex`
+* `.d-print-none`
+* `.d-print-inline`
+* `.d-print-inline-block`
+* `.d-print-block`
+* `.d-print-table`
+* `.d-print-table-row`
+* `.d-print-table-cell`
+* `.d-print-flex`
+* `.d-print-inline-flex`
 
 The print and display classes can be combined.
 
