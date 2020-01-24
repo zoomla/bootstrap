@@ -27,7 +27,6 @@ jobs:
           key: ${{ runner.os }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/dart-sass.yml') }}
           restore-keys: |
             ${{ runner.OS }}-node-v${{ env.NODE }}-${{ hashFiles('package.json') }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/dart-sass.yml') }}
-            ${{ runner.OS }}-node-v${{ env.NODE }}-
 
       - name: Build CSS with Dart Sass
         run: |
