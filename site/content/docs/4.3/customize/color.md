@@ -6,60 +6,6 @@ group: customize
 toc: true
 ---
 
-## All colors
-
-All Bootstrap colors are available as Sass variables and a Sass map in `scss/_variables.scss` file. To avoid increased file sizes, we don't create text or background color classes for each of these variables. Instead, we choose a subset of these colors for a [theme palette](#theme-colors).
-
-<div class="row">
-  {{< theme-colors.inline >}}
-  {{- range $color := $.Site.Data.colors }}
-    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark"))) }}
-    <div class="col-md-4 mb-3 font-monospace">
-      <div class="p-3 mb-2 swatch-{{ $color.name }}">
-        <strong class="d-block">${{ $color.name }}</strong>
-        {{ $color.hex }}
-      </div>
-      {{ range (seq 100 100 900) }}
-      <div class="p-3 bd-{{ $color.name }}-{{ . }}">${{ $color.name }}-{{ . }}</div>
-      {{ end }}
-    </div>
-    {{ end -}}
-  {{ end -}}
-  {{< /theme-colors.inline >}}
-</div>
-
-### Notes on Sass
-
-Sass cannot programmatically generate variables, so we manually created variables for every tint and shade ourselves. We specify the midpoint value (e.g., `$blue-500`) and use custom color functions to tint (lighten) or shade (darken) our colors via Sass's `mix()` color function.
-
-Using `mix()` is not the same as `lighten()` and `darken()`—the former blends the specified color with white or black, while the latter only adjusts the lightness value of each color. The result is a much more complete suite of colors, as [shown in this CodePen demo](https://codepen.io/emdeoh/pen/zYOQOPB).
-
-Our `tint-color()` and `shade-color()` functions use `mix()` alongside our `$theme-color-interval` variable, which specifies a stepped percentage value for each mixed color we produce. See the `scss/_functions.scss` and `scss/_variables.scss` files for the full source code.
-
-### Using Maps
-
-Bootstrap's source Sass files include three maps to help you quickly and easily loop over a list of colors and their hex values.
-
-- `$colors` lists all our available base (`500`) colors
-- `$theme-colors` lists all semantically named theme colors (shown below)
-- `$grays` lists all tins and shades of gray
-
-See the `scss/_variables.scss` file for more information.
-
-### Example
-
-Here's how you can use these in your Sass:
-
-{{< highlight scss >}}
-.alpha { color: $purple; }
-.beta {
-  color: $yellow-300;
-  background-color: $indigo-900;
-}
-{{< /highlight >}}
-
-[Color utility classes]({{< docsref "/utilities/colors" >}}) are also available for setting `color` and `background-color` using the `500` color values.
-
 ## Theme colors
 
 We use a subset of all colors to create a smaller color palette for generating color schemes, also available as Sass variables and a Sass map in Bootstrap's `scss/_variables.scss` file.
@@ -74,19 +20,79 @@ We use a subset of all colors to create a smaller color palette for generating c
   {{< /theme-colors.inline >}}
 </div>
 
-## Grays
+All these colors are available as a Sass map, `$theme-colors`.
 
-An expansive set of gray variables and a Sass map in `scss/_variables.scss` for consistent shades of gray across your project. Note that these are "cool grays", which tend towards a subtle blue tone, rather than neutral grays.
+{{< highlight scss >}}
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+{{< /highlight >}}
 
-<div class="row mb-3">
-  <div class="col-md-4">
-    {{< theme-colors.inline >}}
-    {{- range $.Site.Data.grays }}
-      <div class="p-3 swatch-{{ .name }}">{{ .name }}</div>
+## All colors
+
+All Bootstrap colors are available as Sass variables and a Sass map in `scss/_variables.scss` file. To avoid increased file sizes, we don't create text or background color classes for each of these variables. Instead, we choose a subset of these colors for a [theme palette](#theme-colors).
+
+<div class="row font-monospace">
+  {{< theme-colors.inline >}}
+  {{- range $color := $.Site.Data.colors }}
+    {{- if (and (not (eq $color.name "white")) (not (eq $color.name "gray")) (not (eq $color.name "gray-dark"))) }}
+    <div class="col-md-4 mb-3">
+      <div class="p-3 mb-2 swatch-{{ $color.name }}">
+        <strong class="d-block">${{ $color.name }}</strong>
+        {{ $color.hex }}
+      </div>
+      {{ range (seq 100 100 900) }}
+      <div class="p-3 bd-{{ $color.name }}-{{ . }}">${{ $color.name }}-{{ . }}</div>
+      {{ end }}
+    </div>
     {{ end -}}
+  {{ end -}}
+
+  <div class="col-md-4 mb-3">
+    <div class="p-3 mb-2 bd-gray-500">
+      <strong class="d-block">$gray-500</strong>
+      #adb5bd
+    </div>
+  {{- range $.Site.Data.grays }}
+    <div class="p-3 bd-gray-{{ .name }}">$gray-{{ .name }}</div>
+  {{ end -}}
+  </div>
   {{< /theme-colors.inline >}}
+
+  <div class="col-md-4 mb-3">
+    <div class="p-3 mb-2 bd-black">
+      <strong class="d-block">$black</strong>
+      #000
+    </div>
+    <div class="p-3 mb-2 bd-white border">
+      <strong class="d-block">$white</strong>
+      #fff
+    </div>
   </div>
 </div>
+
+### Notes on Sass
+
+Sass cannot programmatically generate variables, so we manually created variables for every tint and shade ourselves. We specify the midpoint value (e.g., `$blue-500`) and use custom color functions to tint (lighten) or shade (darken) our colors via Sass's `mix()` color function.
+
+Using `mix()` is not the same as `lighten()` and `darken()`—the former blends the specified color with white or black, while the latter only adjusts the lightness value of each color. The result is a much more complete suite of colors, as [shown in this CodePen demo](https://codepen.io/emdeoh/pen/zYOQOPB).
+
+Our `tint-color()` and `shade-color()` functions use `mix()` alongside our `$theme-color-interval` variable, which specifies a stepped percentage value for each mixed color we produce. See the `scss/_functions.scss` and `scss/_variables.scss` files for the full source code.
+
+## Color Sass maps
+
+Bootstrap's source Sass files include three maps to help you quickly and easily loop over a list of colors and their hex values.
+
+- `$colors` lists all our available base (`500`) colors
+- `$theme-colors` lists all semantically named theme colors (shown below)
+- `$grays` lists all tins and shades of gray
 
 Within `scss/_variables.scss`, you'll find Bootstrap's color variables and Sass map. Here's an example of the `$colors` Sass map:
 
@@ -109,3 +115,17 @@ $colors: (
 {{< /highlight >}}
 
 Add, remove, or modify values within the map to update how they're used in many other components. Unfortunately at this time, not _every_ component utilizes this Sass map. Future updates will strive to improve upon this. Until then, plan on making use of the `${color}` variables and this Sass map.
+
+### Example
+
+Here's how you can use these in your Sass:
+
+{{< highlight scss >}}
+.alpha { color: $purple; }
+.beta {
+  color: $yellow-300;
+  background-color: $indigo-900;
+}
+{{< /highlight >}}
+
+[Color utility classes]({{< docsref "/utilities/colors" >}}) are also available for setting `color` and `background-color` using the `500` color values.
