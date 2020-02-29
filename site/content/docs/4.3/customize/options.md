@@ -9,6 +9,7 @@ Customize Bootstrap with our built-in custom variables file and easily toggle gl
 
 You can find and customize these variables for key global options in Bootstrap's `scss/_variables.scss` file.
 
+{{< table >}}
 | Variable                                     | Values                             | Description                                                                            |
 | -------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- |
 | `$spacer`                                    | `1rem` (default), or any value > 0 | Specifies the default spacer value to programmatically generate our [spacer utilities]({{< docsref "/utilities/spacing" >}}). |
@@ -23,3 +24,5 @@ You can find and customize these variables for key global options in Bootstrap's
 | `$enable-responsive-font-sizes`              | `true` or `false` (default)        | Enables [responsive font sizes]({{< docsref "/content/typography#responsive-font-sizes" >}}). |
 | `$enable-validation-icons`                   | `true` (default) or `false`        | Enables `background-image` icons within textual inputs and some custom forms for validation states. |
 | `$enable-deprecation-messages`               | `true` or `false` (default)        | Set to `true` to show warnings when using any of the deprecated mixins and functions that are planned to be removed in `v5`. |
+| `$enable-important-utilities`                | `true` (default) or `false`        | Enables the `!important` suffix in utility classes. |
+{{< /table >}}
