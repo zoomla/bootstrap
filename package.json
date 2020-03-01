@@ -50,7 +50,7 @@
     "docs-build": "hugo --cleanDestinationDir",
     "docs-compile": "npm run docs-build",
     "docs-linkinator": "linkinator _gh_pages --recurse --silent --skip \"^(?!http://localhost)\"",
-    "docs-linkinator-prod": "linkinator https://getbootstrap.com --recurse --silent --skip \"^(https://developer.microsoft.com)|(https://github.com/twbs/bootstrap/releases/)\"",
+    "docs-linkinator-prod": "linkinator https://getbootstrap.com --concurrency 10 --recurse --silent --skip \"^(https://developer.microsoft.com)|(https://github.com/twbs/bootstrap/releases/)\"",
     "docs-vnu": "node build/vnu-jar.js",
     "docs-lint": "npm-run-all --parallel docs-vnu docs-linkinator",
     "docs-serve": "hugo server --port 9001 --disableFastRender",
