@@ -6,9 +6,6 @@
     "runners": [
       "axe"
     ],
-    "hideElements": ".bd-search, [class*=-success], [class*=-info], [class*=-light]",
-    "ignore": [
-      "WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2"
-    ]
+    "hideElements": ".bd-search, [class*=-success], [class*=-info], [class*=-light]"
   }
 }
