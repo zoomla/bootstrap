@@ -524,7 +524,7 @@ Regular table background variants are not available with the dark table, however
         <td>Cell</td>
         <td>Cell</td>
       </tr>
-      <tr class="bg-info">
+      <tr class="bg-info text-body">
         <th scope="row">5</th>
         <td>Cell</td>
         <td>Cell</td>
@@ -534,7 +534,7 @@ Regular table background variants are not available with the dark table, however
         <td>Cell</td>
         <td>Cell</td>
       </tr>
-      <tr class="bg-warning">
+      <tr class="bg-warning text-dark">
         <th scope="row">7</th>
         <td>Cell</td>
         <td>Cell</td>
