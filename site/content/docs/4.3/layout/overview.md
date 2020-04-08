@@ -24,24 +24,24 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
 <table class="table">
   <thead>
     <tr>
-      <th></th>
-      <th>
+      <td class="border-dark"></td>
+      <th scope="col">
         Extra small<br>
         <span class="font-weight-normal">&lt;576px</span>
       </th>
-      <th>
+      <th scope="col">
         Small<br>
         <span class="font-weight-normal">&ge;576px</span>
       </th>
-      <th>
+      <th scope="col">
         Medium<br>
         <span class="font-weight-normal">&ge;768px</span>
       </th>
-      <th>
+      <th scope="col">
         Large<br>
         <span class="font-weight-normal">&ge;992px</span>
       </th>
-      <th>
+      <th scope="col">
         Extra large<br>
         <span class="font-weight-normal">&ge;1200px</span>
       </th>
