@@ -49,7 +49,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
   </thead>
   <tbody>
     <tr>
-      <td><code>.container</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container</code></th>
       <td class="text-muted">100%</td>
       <td>540px</td>
       <td>720px</td>
@@ -57,7 +57,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
       <td>1140px</td>
     </tr>
     <tr>
-      <td><code>.container-sm</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container-sm</code></th>
       <td class="text-muted">100%</td>
       <td>540px</td>
       <td>720px</td>
@@ -65,7 +65,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
       <td>1140px</td>
     </tr>
     <tr>
-      <td><code>.container-md</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container-md</code></th>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
       <td>720px</td>
@@ -73,7 +73,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
       <td>1140px</td>
     </tr>
     <tr>
-      <td><code>.container-lg</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container-lg</code></th>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
@@ -81,7 +81,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
       <td>1140px</td>
     </tr>
     <tr>
-      <td><code>.container-xl</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container-xl</code></th>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
@@ -89,7 +89,7 @@ See them in action and compare them in our [Grid example]({{< docsref "/examples
       <td>1140px</td>
     </tr>
     <tr>
-      <td><code>.container-fluid</code></td>
+      <th scope="row" class="font-weight-normal"><code>.container-fluid</code></th>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
       <td class="text-muted">100%</td>
