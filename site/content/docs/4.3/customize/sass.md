@@ -145,6 +145,8 @@ For example, we use the `primary`, `success`, and `danger` keys from `$theme-col
 
 ## Functions
 
+### Colors
+
 In Bootstrap 5, we've dropped the `color()`, `theme-color()` and `gray()` functions because the values are also available as standalone variables. So instead of using `theme-color("primary")`, you can now just use the `$primary` variable.
 
 {{< highlight scss >}}

@@ -35,6 +35,8 @@ $theme-colors: (
 ) !default;
 {{< /highlight >}}
 
+Check out [our Sass maps and loops docs]({{< docsref "/customize/sass#maps-and-loops" >}}) for how to modify these colors.
+
 ## All colors
 
 All Bootstrap colors are available as Sass variables and a Sass map in `scss/_variables.scss` file. To avoid increased file sizes, we don't create text or background color classes for each of these variables. Instead, we choose a subset of these colors for a [theme palette](#theme-colors).
@@ -67,7 +69,7 @@ All Bootstrap colors are available as Sass variables and a Sass map in `scss/_va
   {{< /theme-colors.inline >}}
 
   <div class="col-md-4 mb-3">
-    <div class="p-3 mb-2 bd-black">
+    <div class="p-3 mb-2 bd-black text-white">
       <strong class="d-block">$black</strong>
       #000
     </div>
