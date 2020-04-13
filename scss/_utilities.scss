@@ -358,6 +358,11 @@ $utilities: map-merge(
       values: $spacers
     ),
     // Text
+    "font-size": (
+      property: font-size,
+      class: fs,
+      values: $font-sizes
+    ),
     "font-weight": (
       property: font-weight,
       values: (
