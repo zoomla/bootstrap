@@ -6,11 +6,11 @@ group: customize
 toc: true
 ---
 
-Bootstrap includes around two dozen [CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) in its compiled CSS. These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser's Inspector, a code sandbox, or general prototyping.
+Bootstrap includes around two dozen [CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) in its compiled CSS, with dozens more on the way for improved customization on a per-component basis. These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser's Inspector, a code sandbox, or general prototyping.
 
-## Available variables
+## Global variables
 
-Here are the variables we include (note that the `:root` is required). They're located in our `_root.scss` file.
+Here are the global variables we include (note that the `:root` is required). They're located in our `_root.scss` file.
 
 {{< highlight css >}}
 {{< root.inline >}}
@@ -25,6 +25,22 @@ Here are the variables we include (note that the `:root` is required). They're l
 
 {{< /root.inline >}}
 {{< /highlight >}}
+
+## Component variables
+
+We've found that some of our components can require less CSS and be more customizable if we make use of more locally scoped CSS custom properties. By _locally scoped_, we mean these variables cannot be accessed outside a parent class name. For example, our tables include the following:
+
+{{< highlight css >}}
+.table {
+  --var: ;
+}
+{{< /highlight >}}
+
+Here's a list of where we utilize CSS custom properties as local variables:
+
+- Grid (primarily for gutters)
+- Tables
+- Buttons
 
 ## Examples
 
