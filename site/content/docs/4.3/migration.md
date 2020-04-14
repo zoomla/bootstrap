@@ -160,12 +160,19 @@ Badges were overhauled to better differentiate themselves from buttons and to be
 
 ## Utilities
 
-- Renamed `.text-monospace` to `.font-monospace`
+### Grid
 - Decreased the number of responsive order utilities per breakpoint. The highest order utility with a number now is `.order-5` instead of `.order-12`. [See #28874](https://github.com/twbs/bootstrap/pull/28874).
+
+### Fonts and text
+- Added `.fs-*` utilities for `font-size`.
+- Renamed `.font-weight-*` utilities as `.fw-*` for brevity.
+- Renamed `.font-style-*` utilities as `.f-*` for brevity.
+- Renamed `.text-monospace` to `.font-monospace`
 - New `line-height` utilities: `.lh-1`, `.lh-sm`, `.lh-base` and `.lh-lg`. See [here]({{< docsref "/utilities/text#line-height" >}}).
+- Removed `.text-hide` as it's an antiquated method for hiding text that shouldn't be used anymore
+
+### Misc
 - Added `.bg-body` for quickly setting the `<body>`'s background to additional elements.
-- **Todo:** Drop `.text-hide` as it's an antiquated method for hiding text that shouldn't be used anymore
-- **Todo:** Split utilities into property-value utility classes and helpers
 
 ## Docs
 
