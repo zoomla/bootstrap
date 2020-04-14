@@ -131,6 +131,10 @@ Badges were overhauled to better differentiate themselves from buttons and to be
 - **Todo:** Removed `.badge-pill` for the `.rounded-pill` utility class
 - **Todo:** Removed badge's hover and focus styles for `a.badge` and `button.badge`.
 
+### Breadcrumbs
+
+- Removed default `padding`, `background-color`, and `border-radius` from `.breadcrumb`. These styles are a little too presecriptive and can easily be restored or modified with utilities.
+
 ### Cards
 
 - Removed the card columns in favor of a Masonry grid [See #28922](https://github.com/twbs/bootstrap/pull/28922).
