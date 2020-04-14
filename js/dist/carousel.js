@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap carousel.js v4.3.1 (https://getbootstrap.com/)
+  * Bootstrap carousel.js v5.0.0-alpha1 (https://getbootstrap.com/)
   * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
@@ -81,7 +81,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): util/index.js
+   * Bootstrap (v5.0.0-alpha1): util/index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -209,14 +209,12 @@
    */
 
   var NAME = 'carousel';
-  var VERSION = '4.3.1';
+  var VERSION = '5.0.0-alpha1';
   var DATA_KEY = 'bs.carousel';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
-
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
-
+  var ARROW_LEFT_KEY = 'ArrowLeft';
+  var ARROW_RIGHT_KEY = 'ArrowRight';
   var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
   var SWIPE_THRESHOLD = 40;
@@ -293,7 +291,7 @@
       this._element = element;
       this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
       this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
-      this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
+      this._pointerEvent = Boolean(window.PointerEvent);
 
       this._addEventListeners();
 
@@ -525,13 +523,13 @@
         return;
       }
 
-      switch (event.which) {
-        case ARROW_LEFT_KEYCODE:
+      switch (event.key) {
+        case ARROW_LEFT_KEY:
           event.preventDefault();
           this.prev();
           break;
 
-        case ARROW_RIGHT_KEYCODE:
+        case ARROW_RIGHT_KEY:
           event.preventDefault();
           this.next();
           break;
@@ -656,12 +654,9 @@
 
         var transitionDuration = getTransitionDurationFromElement(activeElement);
         EventHandler.one(activeElement, TRANSITION_END, function () {
-          nextElement.classList.remove(directionalClassName);
-          nextElement.classList.remove(orderClassName);
+          nextElement.classList.remove(directionalClassName, orderClassName);
           nextElement.classList.add(CLASS_NAME_ACTIVE);
-          activeElement.classList.remove(CLASS_NAME_ACTIVE);
-          activeElement.classList.remove(orderClassName);
-          activeElement.classList.remove(directionalClassName);
+          activeElement.classList.remove(CLASS_NAME_ACTIVE, orderClassName, directionalClassName);
           _this4._isSliding = false;
           setTimeout(function () {
             EventHandler.trigger(_this4._element, EVENT_SLID, {
