@@ -113,7 +113,7 @@ Changes to Reboot, typography, tables, and more.
 
 ## Components
 
-- Unified `padding` values for cards, dropdowns, list groups, and modals to be based on our `$spacer` variable.
+- Unified `padding` values for alerts, cards, dropdowns, list groups, modals, popovers, and tooltips to be based on our `$spacer` variable.
 
 ### Disabled states
 
