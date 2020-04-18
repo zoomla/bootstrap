@@ -45,6 +45,8 @@ Changes to our source Sass files and compiled CSS.
 - `color-yiq()` function is renamed to `color-contrast()` since it's not related to YIQ colorspace anymore — [See #30168](https://github.com/twbs/bootstrap/pull/30168/) — and related variables are renamed alongside:
   - `$yiq-contrasted-threshold` is renamed `$min-contrast-ratio`,
   - `$yiq-text-dark` and `$yiq-text-light` are respectively renamed `$color-contrast-dark` and `$color-contrast-light`.
+- The `media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint. Use `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` to target viewports smaller than the `lg` breakpoint.
+- The `media-breakpoint-between()` mixin's second parameter also uses the breakpoint itself instead of the next breakpoint. Use `media-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` to target viewports between the `sm` and `lg` breakpoints.
 
 ## JavaScript
 
