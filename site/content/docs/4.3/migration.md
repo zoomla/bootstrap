@@ -132,6 +132,11 @@ Badges were overhauled to better differentiate themselves from buttons and to be
 - **Todo:** Removed `.badge-pill` for the `.rounded-pill` utility class
 - **Todo:** Removed badge's hover and focus styles for `a.badge` and `button.badge`.
 
+### Buttons
+
+- The javascript button plugin is dropped in favour of a CSS only solution. See [TODO: add PR issue number]().
+  - The `.btn-toggle` class can be added to inputs, any label with `.btn` and modifier class can be used to theme the labels.
+
 ### Cards
 
 - Removed the card columns in favor of a Masonry grid [See #28922](https://github.com/twbs/bootstrap/pull/28922).
