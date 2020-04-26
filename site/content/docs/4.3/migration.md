@@ -134,7 +134,7 @@ Badges were overhauled to better differentiate themselves from buttons and to be
 
 ### Buttons
 
-- The javascript button plugin is dropped in favour of a CSS only solution. See [TODO: add PR issue number]().
+- The javascript button plugin is dropped in favour of a CSS only solution. [See #30650](https://github.com/twbs/bootstrap/pull/30650).
   - The `.btn-toggle` class can be added to inputs, any label with `.btn` and modifier class can be used to theme the labels.
 
 ### Cards
